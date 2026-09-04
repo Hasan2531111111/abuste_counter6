@@ -1,40 +1,30 @@
-name: Build APK
+[app]
+title = ابوسطه‌شمار
+package.name = abustecounter
+package.domain = org.abuste
 
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+source.dir = .
+source.include_exts = py,png,jpg,kv,atlas,ttf,db
 
-jobs:
-  build:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
+version = 0.1
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
+# نکته: sqlite3 بخشی از کتابخانه استاندارد پایتون است و نیازی به
+# افزودن جداگانه به requirements ندارد.
+requirements = python3==3.11.6,kivy==2.3.1,kivymd==2.0.0,arabic_reshaper,python-bidi
 
-      - name: Install system dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y git zip unzip openjdk-17-jdk python3-pip \
-            autoconf libtool pkg-config zlib1g-dev libncurses5-dev \
-            libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev \
-            build-essential
+orientation = portrait
+fullscreen = 0
 
-      - name: Install buildozer
-        run: |
-          pip install --upgrade pip
-          pip install buildozer==1.5.0 cython==3.0.10
+# icon.filename = %(source.dir)s/assets/icon.png
 
-      - name: Build APK (debug)
-        run: |
-          buildozer -v android debug
+[buildozer]
+log_level = 2
+warn_on_root = 1
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: abuste-counter-apk
-          path: bin/*.apk
+[android]
+android.accept_sdk_license = True
+android.permissions =
+android.api = 33
+android.minapi = 21
+android.ndk = 25b
+android.archs = arm64-v8a, armeabi-v7a
