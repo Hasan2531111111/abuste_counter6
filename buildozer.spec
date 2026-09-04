@@ -1,4 +1,5 @@
 [app]
+android.accept_sdk_license = True
 title = ابوسطه‌شمار
 package.name = abustecounter
 package.domain = org.abuste
