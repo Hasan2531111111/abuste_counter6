@@ -1,5 +1,5 @@
 [app]
-title = ابوسطه‌شمار
+title = ط§ط¨ظˆط³ط·ظ‡â€Œط´ظ…ط§ط±
 package.name = abustecounter
 package.domain = org.abuste
 
@@ -8,8 +8,8 @@ source.include_exts = py,png,jpg,kv,atlas,ttf,db
 
 version = 0.1
 
-# نکته: sqlite3 بخشی از کتابخانه استاندارد پایتون است و نیازی به
-# افزودن جداگانه به requirements ندارد.
+# ظ†ع©طھظ‡: sqlite3 ط¨ط®ط´غŒ ط§ط² ع©طھط§ط¨ط®ط§ظ†ظ‡ ط§ط³طھط§ظ†ط¯ط§ط±ط¯ ظ¾ط§غŒطھظˆظ† ط§ط³طھ ظˆ ظ†غŒط§ط²غŒ ط¨ظ‡
+# ط§ظپط²ظˆط¯ظ† ط¬ط¯ط§ع¯ط§ظ†ظ‡ ط¨ظ‡ requirements ظ†ط¯ط§ط±ط¯.
 requirements = python3==3.11.6,kivy==2.3.1,kivymd==2.0.0,arabic_reshaper,python-bidi
 
 orientation = portrait
